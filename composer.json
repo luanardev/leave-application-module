@@ -1,0 +1,27 @@
+{
+    "name": "luanardev/leave-application-module",
+    "type": "laravel-module",
+    "description": "Leave Application Module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Simpokolwe",
+            "email": "bsimpokolwe@luanar.ac.mw"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+				"Lumis\\LeaveApplication\\Providers\\LeaveApplicationServiceProvider"
+			],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Lumis\\LeaveApplication\\": ""
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "LeaveApplication",
+    "alias": "leaveapplication",
+    "description": "",
+    "keywords": [],
+    "priority": 5,
+    "providers": [
+        "Lumis\\LeaveApplication\\Providers\\LeaveApplicationServiceProvider"
+    ],
+    "files": []
+}

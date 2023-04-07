@@ -1,0 +1,8 @@
+{
+    "name": "Leave Application",
+    "group": "client",
+    "url": "leave_application",
+    "icon": "fa fa-briefcase",
+    "color": "#17a2b8",
+    "background": "rgba(22, 160, 133, 0.1)"
+}
