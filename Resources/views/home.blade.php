@@ -23,20 +23,42 @@
         <div class="content">
             <div class="row">
                 <div class="col-lg-9">
-                    <livewire:leaveapplication::draft-leave-widget :staff=$staff :financialYear=$financialYear />
-                    <livewire:leaveapplication::recent-leave-widget :staff=$staff :financialYear=$financialYear />
+                    <livewire:leaveapplication::leave-draft
+                        :staff="$staff"
+                        :financialYear="$financialYear"
+                    />
+                    <livewire:leaveapplication::recent-leave
+                        :staff="$staff"
+                        :financialYear="$financialYear"
+                    />
 
                     @if($approver->canMakeApprovals())
-                        <livewire:leaveapplication::leave-awaiting-approval-widget :staff=$staff :financialYear=$financialYear />
-                        <livewire:leaveapplication::leave-return-request-widget :staff=$staff :financialYear=$financialYear />
+                        <livewire:leaveapplication::leave-awaiting-approval
+                            :staff="$staff"
+                            :financialYear="$financialYear"
+                        />
+                        <livewire:leaveapplication::leave-return-request
+                            :staff="$staff"
+                            :financialYear="$financialYear"
+                        />
                     @endif
 
-                    <livewire:leaveapplication::leave-days-balance-widget :staff=$staff :financialYear=$financialYear />
+                    <livewire:leaveapplication::leave-days-balance
+                        :staff="$staff"
+                        :financialYear="$financialYear"
+                    />
                 </div>
 
                 <div class="col-lg-3">
-                    <livewire:leaveapplication::leave-days-widget :staff=$staff :financialYear=$financialYear :leaveType=$leaveType />
-                    <livewire:leaveapplication::staff-on-leave-widget :staff=$staff :financialYear=$financialYear />
+                    <livewire:leaveapplication::leave-days
+                        :staff="$staff"
+                        :financialYear="$financialYear"
+                        :leaveType="$leaveType"
+                    />
+                    <livewire:leaveapplication::staff-on-leave
+                        :staff="$staff"
+                        :financialYear="$financialYear"
+                    />
                 </div>
             </div>
         </div>

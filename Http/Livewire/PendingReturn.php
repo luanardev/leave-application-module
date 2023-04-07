@@ -9,7 +9,7 @@ use Lumis\LeaveApplication\Entities\Leave;
 use Lumis\LeaveApplication\Entities\StaffLeave;
 use Lumis\Organization\Entities\FinancialYear;
 
-class PendingReturnWidget extends LivewireUI
+class PendingReturn extends LivewireUI
 {
 
     /**
@@ -40,6 +40,6 @@ class PendingReturnWidget extends LivewireUI
 
     public function render()
     {
-        return view('leaveapplication::livewire.pending-return-widget');
+        return view('leaveapplication::livewire.pending-return');
     }
 }

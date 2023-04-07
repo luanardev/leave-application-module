@@ -23,7 +23,10 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <livewire:leaveapplication::pending-return-widget :staff=$staff :financialYear=$financialYear />
+                    <livewire:leaveapplication::pending-return
+                        :staff="$staff"
+                        :financialYear="$financialYear"
+                    />
                 </div>
 
             </div>

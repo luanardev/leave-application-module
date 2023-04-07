@@ -11,7 +11,7 @@ use Lumis\LeaveApplication\Entities\LeaveType;
 use Lumis\LeaveApplication\Entities\StaffLeave;
 use Lumis\Organization\Entities\FinancialYear;
 
-class LeaveDaysWidget extends LivewireUI
+class LeaveDays extends LivewireUI
 {
     /**
      * @var LeaveType
@@ -78,6 +78,6 @@ class LeaveDaysWidget extends LivewireUI
      */
     public function render(): Factory|View|Application
     {
-        return view('leaveapplication::livewire.leave-days-widget');
+        return view('leaveapplication::livewire.leave-days');
     }
 }

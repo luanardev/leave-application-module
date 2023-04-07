@@ -9,7 +9,7 @@ use Lumis\LeaveApplication\Entities\Leave;
 use Lumis\LeaveApplication\Entities\StaffLeave;
 use Lumis\Organization\Entities\FinancialYear;
 
-class RecentLeaveWidget extends LivewireUI
+class RecentLeave extends LivewireUI
 {
 
     /**
@@ -46,6 +46,6 @@ class RecentLeaveWidget extends LivewireUI
 
     public function render()
     {
-        return view('leaveapplication::livewire.recent-leave-widget');
+        return view('leaveapplication::livewire.recent-leave');
     }
 }

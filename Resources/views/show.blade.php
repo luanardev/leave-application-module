@@ -23,11 +23,17 @@
 
             <div class="row">
                 <div class="col-lg-9">
-                    <livewire:leaveapplication::leave-details :leave=$leave />
+                    <livewire:leaveapplication::leave-details
+                        :leave="$leave"
+                    />
                 </div>
 
                 <div class="col-lg-3">
-                    <livewire:leaveapplication::leave-days-widget :staff=$staff :financialYear=$financialYear :leaveType=$leaveType />
+                    <livewire:leaveapplication::leave-days
+                        :staff="$staff"
+                        :financialYear="$financialYear"
+                        :leaveType="$leaveType"
+                    />
                 </div>
             </div>
         </div>

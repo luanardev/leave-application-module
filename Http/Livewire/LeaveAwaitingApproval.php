@@ -8,7 +8,7 @@ use Lumis\StaffManagement\Entities\Staff;
 use Lumis\LeaveApplication\Entities\LeaveApprover;
 use Lumis\Organization\Entities\FinancialYear;
 
-class LeaveAwaitingApprovalWidget extends LivewireUI
+class LeaveAwaitingApproval extends LivewireUI
 {
     /**
      * @var Collection
@@ -39,6 +39,6 @@ class LeaveAwaitingApprovalWidget extends LivewireUI
 
     public function render()
     {
-        return view('leaveapplication::livewire.leave-awaiting-approval-widget');
+        return view('leaveapplication::livewire.leave-awaiting-approval');
     }
 }

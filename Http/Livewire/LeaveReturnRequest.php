@@ -9,7 +9,7 @@ use Lumis\LeaveApplication\Entities\Leave;
 use Lumis\LeaveApplication\Entities\LeaveApprover;
 use Lumis\Organization\Entities\FinancialYear;
 
-class LeaveReturnRequestWidget extends LivewireUI
+class LeaveReturnRequest extends LivewireUI
 {
     /**
      * @var Collection
@@ -44,6 +44,6 @@ class LeaveReturnRequestWidget extends LivewireUI
 
     public function render()
     {
-        return view('leaveapplication::livewire.leave-return-request-widget');
+        return view('leaveapplication::livewire.leave-return-request');
     }
 }

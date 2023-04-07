@@ -87,7 +87,9 @@
 
             @if($leave->hasApprovals())
                 <div class="col-lg-12">
-                    <livewire:leaveapplication::leave-approvals :leave=$leave />
+                    <livewire:leaveapplication::leave-approvals
+                        :leave="$leave"
+                    />
                 </div>
             @endif
         </div>

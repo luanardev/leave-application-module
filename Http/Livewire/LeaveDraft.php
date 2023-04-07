@@ -5,35 +5,39 @@ namespace Lumis\LeaveApplication\Http\Livewire;
 use Illuminate\Support\Collection;
 use Luanardev\LivewireUI\LivewireUI;
 use Lumis\StaffManagement\Entities\Staff;
+use Lumis\LeaveApplication\Entities\Leave;
 use Lumis\LeaveApplication\Entities\StaffLeave;
 use Lumis\Organization\Entities\FinancialYear;
 
-class StaffOnLeaveWidget extends LivewireUI
+class LeaveDraft extends LivewireUI
 {
+
     /**
      * @var Collection
      */
-    public Collection $staffOnLeave;
+    public Collection $draftLeaves;
 
     public function __construct()
     {
         parent::__construct();
-        $this->staffOnLeave = collect();
+        $this->draftLeaves = collect();
     }
 
-    /**
-     * @param Staff $staff
-     * @param FinancialYear $financialYear
-     * @return void
-     */
     public function mount(Staff $staff, FinancialYear $financialYear): void
     {
         $staffLeave = new StaffLeave($staff, $financialYear);
-        $this->staffOnLeave = $staffLeave->getColleaguesOnLeave();
+        $this->draftLeaves = $staffLeave->getRecentDrafts();
+    }
+
+    public function delete(Leave $leave)
+    {
+        $leave->delete();
+        $this->alert('Leave draft deleted');
+        $this->redirect(route('leave_application.home'));
     }
 
     public function render()
     {
-        return view('leaveapplication::livewire.staff-on-leave-widget');
+        return view('leaveapplication::livewire.leave-draft');
     }
 }
