@@ -32,7 +32,7 @@ class LeaveDraft extends LivewireUI
     public function delete(Leave $leave)
     {
         $leave->delete();
-        $this->alert('Leave draft deleted');
+        $this->toastr('Draft deleted');
         $this->redirect(route('leave_application.home'));
     }
 
