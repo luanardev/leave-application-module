@@ -54,7 +54,7 @@ class LeaveRequestNotification extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->markdown('leavemanagement::emails.leave_request_notification', [
+            ->markdown('leaveapplication::emails.leave_request_notification', [
                 'leave' => $this->leave,
                 'staff' => $this->staff
             ]);

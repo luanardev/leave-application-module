@@ -47,7 +47,7 @@ class LeaveReturnReminder extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->markdown('leavemanagement::emails.leave_return_reminder', [
+            ->markdown('leaveapplication::emails.leave_return_reminder', [
                 'leave' => $this->leave
             ]);
     }

@@ -47,7 +47,7 @@ class LeaveActivatedNotification extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->markdown('leavemanagement::emails.leave_activated_notification', [
+            ->markdown('leaveapplication::emails.leave_activated_notification', [
                 'leave' => $this->leave
             ]);
     }

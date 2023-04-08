@@ -55,7 +55,7 @@ class LeaveApprovalNotification extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->markdown('leavemanagement::emails.leave_approval_notification', [
+            ->markdown('leaveapplication::emails.leave_approval_notification', [
                 'leave' => $this->leave,
                 'approver' => $this->approver
             ]);

@@ -47,7 +47,7 @@ class LeaveEndDateReminder extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->markdown('leavemanagement::emails.leave_end_date_reminder', [
+            ->markdown('leaveapplication::emails.leave_end_date_reminder', [
                 'leave' => $this->leave
             ]);
     }
