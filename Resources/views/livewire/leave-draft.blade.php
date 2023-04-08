@@ -30,7 +30,7 @@
                                         <td>
                                             <a href="{{route('leave_application.edit', $leave)}}"
                                                class="btn btn-sm btn-outline-primary">Edit</a>
-                                            <a wire:click="delete({{$leave}})" href="#"
+                                            <a wire:click.prevent="delete('{{$leave->id}}')" href="#"
                                                class="btn btn-sm btn-outline-danger">Delete</a>
                                         </td>
                                     </tr>
