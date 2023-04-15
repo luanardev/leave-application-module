@@ -6,11 +6,13 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 use Lumis\LeaveApplication\Entities\Leave;
 use Lumis\LeaveApplication\Events\LeaveApproved;
 use Lumis\LeaveApplication\Events\LeaveCreated;
+use Lumis\LeaveApplication\Events\LeaveReturn;
 use Lumis\LeaveApplication\Events\NextStage;
 use Lumis\LeaveApplication\Listeners\NotifyApprover;
 use Lumis\LeaveApplication\Listeners\NotifySupervisor;
 use Lumis\LeaveApplication\Listeners\SendLeaveApprovedNotification;
 use Lumis\LeaveApplication\Listeners\SendLeaveRequestNotification;
+use Lumis\LeaveApplication\Listeners\SendLeaveReturnNotification;
 use Lumis\LeaveApplication\Observers\LeaveObserver;
 
 class EventServiceProvider extends ServiceProvider
@@ -24,7 +26,7 @@ class EventServiceProvider extends ServiceProvider
 
         LeaveCreated::class => [
             SendLeaveRequestNotification::class,
-            NotifySupervisor::class
+            NotifySupervisor::class,
         ],
 
         NextStage::class => [
@@ -32,8 +34,13 @@ class EventServiceProvider extends ServiceProvider
         ],
 
         LeaveApproved::class => [
-            SendLeaveApprovedNotification::class
-        ]
+            SendLeaveApprovedNotification::class,
+        ],
+
+        LeaveReturn::class => [
+            SendLeaveReturnNotification::class,
+        ],
+
     ];
 
     /**
