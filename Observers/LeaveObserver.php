@@ -4,6 +4,7 @@ namespace Lumis\LeaveApplication\Observers;
 
 use Lumis\LeaveApplication\Entities\Leave;
 use Lumis\LeaveApplication\Events\LeaveCreated;
+use Lumis\LeaveApplication\Events\LeaveReturn;
 
 class LeaveObserver
 {
@@ -28,7 +29,9 @@ class LeaveObserver
      */
     public function updated(Leave $leave): void
     {
-
+        if($leave->isReturning()){
+            LeaveReturn::dispatch($leave);
+        }
 
     }
 
