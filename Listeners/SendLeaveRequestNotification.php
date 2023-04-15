@@ -5,8 +5,7 @@ namespace Lumis\LeaveApplication\Listeners;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Notification;
 use Lumis\LeaveApplication\Events\LeaveCreated;
-use Lumis\LeaveApplication\Events\LeaveReturn;
-use Lumis\LeaveApplication\Notifications\LeaveReturnNotification;
+use Lumis\LeaveApplication\Notifications\LeaveRequestNotification;
 
 class SendLeaveRequestNotification implements ShouldQueue
 {
@@ -22,7 +21,7 @@ class SendLeaveRequestNotification implements ShouldQueue
         $leave = $event->leave;
         $staff = $leave->staff;
 
-        $notification = new LeaveReturnNotification($leave, $staff);
+        $notification = new LeaveRequestNotification($leave, $staff);
         Notification::send($staff, $notification);
 
     }
