@@ -4,7 +4,7 @@ namespace Lumis\LeaveApplication\Listeners;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Notification;
-use Lumis\LeaveApplication\Events\LeaveCreated;
+use Lumis\LeaveApplication\Events\LeaveReturn;
 use Lumis\LeaveApplication\Notifications\LeaveApprovalNotification;
 
 class NotifySupervisor implements ShouldQueue
@@ -14,10 +14,10 @@ class NotifySupervisor implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param LeaveCreated $event
+     * @param LeaveReturn $event
      * @return void
      */
-    public function handle(LeaveCreated $event): void
+    public function handle(LeaveReturn $event): void
     {
         $leave = $event->leave;
         $supervisor = $leave->staff->supervisor;
