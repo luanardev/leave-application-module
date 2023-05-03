@@ -142,9 +142,9 @@ class StaffLeave
         if($this->leaveType->isAnnualLeave()){
 
             $financialYear = FinancialYear::getCurrent();
-            $fromDate = Carbon::today();
-            $toDate = $financialYear->opening_date;
-            $months = $toDate->diffInMonths($fromDate);
+            $today = Carbon::today();
+            $openingDate = $financialYear->opening_date;
+            $months = intval($openingDate->floatDiffInMonths($today));
             $rate = $this->accrualRate();
             return round($months * $rate);
         }else{
